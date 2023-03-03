@@ -1,0 +1,62 @@
+Package: constellatoR
+Title: Cluster Orthologous Groups (OGs) using the similarity scores of their Gene Ontology annotations (GOs)
+Version: 0.1.0
+Authors@R: c(person(given = "Carlos", 
+    family = "Vargas-Chavez",
+    email = "carlos.vargas@ibe.upf-csic.es", 
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0003-3635-1411")),
+    person(given = "Leandro", 
+    family = "Aristide",
+    email = "leandro.aristide@ibe.upf-csic.es", 
+    role = "aut",
+    comment = c(ORCID = "0000-0001-9556-2783")),
+    person(given = "Pau", 
+    family = "Balart-Garcia",
+    email = "pau.balart@ibe.upf-csic.es", 
+    role = "aut",
+    comment = c(ORCID = "0000-0002-8292-4674")),
+    person(given = "Rosa",
+    family = "Fernandez",
+    email = "rosa.fernandez@ibe.upf-csic.es", 
+    role = "aut",
+    comment = c(ORCID = "0000-0002-4719-6640"))
+    )
+Description: This package is used to calculate a matrix containing the semantic 
+    similarity between the Gene Ontology annotations (GOs) in a list. Then this 
+    matrix can be used to obtain a matrix with the similarities between the 
+    Orthologous Groups (OGs) taking into consideration the GOs that belong to 
+    each OG. This is provided by the user as a data.frame with two columns, one 
+    with the GOs and the other with the OGs. This package can also be used to 
+    annotate the OGs by obtaining the descriptions for the ontologies (BP, MF, 
+    CC) selected by the user. Finally, using the similarity matrix and the 
+    annotations a plot with the constellations, clusters of OGs, is provided.
+License: GPL-3
+Depends: 
+    R (>= 2.10)
+URL: https://github.com/MetazoaPhylogenomicsLab/constellatoR
+Imports: 
+    apcluster,
+    clusterProfiler,
+    data.table,
+    dplyr,
+    ggnewscale,
+    ggplot2,
+    ggrepel,
+    GOSemSim,
+    GOxploreR,
+    magrittr,
+    Matrix,
+    paletteer,
+    pbmcapply,
+    simplifyEnrichment
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+VignetteBuilder: knitr
