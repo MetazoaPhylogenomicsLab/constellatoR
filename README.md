@@ -1,5 +1,5 @@
-# constellatoR
-R package constellatoR to check functional convergence in Orthologous Groups (OGs) using the similarity scores of their Gene Ontology annotations (GOs). 
+# constellatoR <a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/inst/img/constellatoR.png' align="right" height="190" /></a>
+R package constellatoR to assess functional convergence in Orthologous Groups (OGs) using the similarity scores of their Gene Ontology annotations (GOs). 
 
 <!-- badges: start -->
   [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -21,7 +21,10 @@ devtools::install_github("MetazoaPhylogenomicsLab/constellatoR",build_vignettes 
 
 #### Foreword : 
 
-The main objective of this package is to cluster Orthologous Groups (OGs) using the similarity scores of their Gene Ontology annotations (GOs). Other features might be used, such as genes along with their associated GOs, however keep in consideration that runtimes will increase the larger the number of features that are used. This tutorial describes the full process going from the outputs of OrthoFinder and [EggNOG-mapper](https://github.com/eggnogdb/eggnog-mapper) but you can choose to use different tools to provide the data given that they are in the appropiate format.
+The main objective of this package is to cluster Orthologous Groups (OGs) using the similarity scores of their Gene Ontology annotations (GOs). Other features might be used, such as genes along with their associated GOs, however keep in consideration that runtimes will increase the larger the number of features that are used. This tutorial describes the full process going from the outputs of OrthoFinder and [EggNOG-mapper](https://github.com/eggnogdb/eggnog-mapper) but you can choose to use different tools to provide the data given that they are in the appropiate format. Using this package you can obtain constellation plots such as this:
+
+<a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/inst/img/Lepto_apclusters_q0.png' align="center" /></a>
+
 
 ### 1 - Prepare the data :
 
@@ -52,7 +55,7 @@ GOsfromOGs <- prepareGOsfromOGs(OGs, GOsdir, species = species)
 
 ### 2 - Obtain the semantic similarity matrix between all the GOs :
 
-Now we will calculate the semantic similarity between all the GOs in a list using the `mgoSim` function from the GOSemSim package. The obtained matrix can then be used to obtain the similarity matrix for different sets of OGs, thus to reduce computation times we suggest that you use this function to obtain the semantic similarity matrix for the full set of GOs to be evaluated and then use it to evaluate different sets of OGs. Also, we provide the matrices for the full set of GOs for each ontology: BP, MF or CC.
+Now we will calculate the semantic similarity between all the GOs in a list using the `mgoSim` function from the GOSemSim package. The obtained matrix can then be used to obtain the similarity matrix for different sets of OGs, thus to reduce computation times we suggest that you use this function to obtain the semantic similarity matrix for the full set of GOs to be evaluated and then use it to evaluate different sets of OGs. Also, we provide the matrices for the full set of GOs for each ontology (BP, MF or CC) from [Figshare](https://figshare.com/articles/dataset/constellatoR_Semantic_similarity_matrices_for_all_GO_terms/22220611).
 
 Using the output of the `prepareGOsfromOGs` we can run the `getSemSim` function. If you did not run the `prepareGOsfromOGs` function you can provide a data.frame with two columns. The header of the first should be `GOs` and the header of the second should be `OGs`. The first column should be a list of GOs and the second one a list of the OGs to which each GO belongs. No empty fields are allowed.
 
