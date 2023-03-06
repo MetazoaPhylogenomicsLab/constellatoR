@@ -1,4 +1,4 @@
-# constellatoR <a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/inst/img/constellatoR.png' align="right" height="190" /></a>
+# constellatoR <a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/blob/main/inst/img/constellatoR.png' align="right" height="190" /></a>
 R package constellatoR to assess functional convergence in Orthologous Groups (OGs) using the similarity scores of their Gene Ontology annotations (GOs). 
 
 <!-- badges: start -->
@@ -23,7 +23,7 @@ devtools::install_github("MetazoaPhylogenomicsLab/constellatoR",build_vignettes 
 
 The main objective of this package is to cluster Orthologous Groups (OGs) using the similarity scores of their Gene Ontology annotations (GOs). Other features might be used, such as genes along with their associated GOs, however keep in consideration that runtimes will increase the larger the number of features that are used. This tutorial describes the full process going from the outputs of OrthoFinder and [EggNOG-mapper](https://github.com/eggnogdb/eggnog-mapper) but you can choose to use different tools to provide the data given that they are in the appropiate format. Using this package you can obtain constellation plots such as this:
 
-<a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/inst/img/Lepto_apclusters_q0.png' align="center" /></a>
+<a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/blob/main/inst/img/Lepto_apclusters_q0.png' align="center" /></a>
 
 
 ### 1 - Prepare the data :
@@ -125,7 +125,7 @@ p <- plotConstellation(clusters, annot, term = "BP1", color = "groups", size = "
 
 We have now obtained our constellation plot. Of course this is a very reduced data set so we only see three clusters, two comprising a single member (with putative functions 'ion transport' and 'organelle organization' respectively) and one with the remaining OGs with putative 'nucleobase-containing compound metabolic process' function. While this is a very simple data set we can see that the OGs in the larger cluster contain some OGs found only in PMAX and LLON, one only in SMED and PMAX and others in all three species. Thus, all three species have genes in OGs potentially involved in nucleobase-containing compound metabolic process even if all of the OGs don't contain genes shared by all three species.
 
-<a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/inst/img/Rplot.png' align="center" /></a>   
+<a><img src='https://github.com/MetazoaPhylogenomicsLab/constellatoR/blob/main/inst/img/Rplot.png' align="center" /></a>   
 
 # Getting help
 
