@@ -38,6 +38,7 @@ OGs corresponds to the path to Orthogroups.tsv, one of the output files of Ortho
 
 ```{r}
 OGs <- system.file("extdata", "Orthogroups.tsv", package="constellatoR")
+rawOGs <- read.delim(OGs)
 ```
 
 GOsdir corresponds to path to the directory that contains the output of the annotation tool. The file names should be the name of the species followed by ".emapper.annotations" if the method used was eggNOG-mapper (EM) and ".goPredSim.annotations" if method used was goPredSim (GPS). For this tutorial we provide the output of EM.
